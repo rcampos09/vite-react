@@ -14,6 +14,18 @@ function GameMenu({ onSelectGame }: GameMenuProps) {
           <h3>Llenar Espacios</h3>
           <p>Completa las oraciones</p>
         </div>
+        
+        <div className="menu-card" onClick={() => onSelectGame('matching')}>
+          <div className="card-icon">🃏</div>
+          <h3>Emparejamiento</h3>
+          <p>Encuentra las parejas correctas</p>
+        </div>
+        
+        <div className="menu-card" onClick={() => onSelectGame('speed-quiz')}>
+          <div className="card-icon">⚡</div>
+          <h3>Quiz Rápido</h3>
+          <p>Contra reloj - ¡Demuestra tu velocidad!</p>
+        </div>
       </div>
       
       <div className="info-section">
@@ -27,6 +39,11 @@ function GameMenu({ onSelectGame }: GameMenuProps) {
             <h4>Artículos Indefinidos</h4>
             <span className="indefinite-articles">un, una, unos, unas</span>
           </div>
+        </div>
+        
+        <div className="credits">
+          <p>Creado por <strong>Rodrigo Campos</strong></p>
+          <p>Colegio Santa Rosa - Curso 3° Básico B</p>
         </div>
       </div>
     </div>
