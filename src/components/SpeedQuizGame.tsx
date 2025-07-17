@@ -49,12 +49,12 @@ function SpeedQuizGame({ onScore, onBack }: SpeedQuizGameProps) {
   const [bestStreak, setBestStreak] = useState(0)
   const [gameCompleted, setGameCompleted] = useState(false)
   const [totalQuestions, setTotalQuestions] = useState(0)
-  const timerRef = useRef<NodeJS.Timeout | null>(null)
+  const timerRef = useRef<number | null>(null)
 
   useEffect(() => {
     return () => {
       if (timerRef.current) {
-        clearInterval(timerRef.current)
+        window.clearInterval(timerRef.current)
       }
     }
   }, [])
@@ -77,10 +77,10 @@ function SpeedQuizGame({ onScore, onBack }: SpeedQuizGameProps) {
 
   const startTimer = () => {
     if (timerRef.current) {
-      clearInterval(timerRef.current)
+      window.clearInterval(timerRef.current)
     }
     
-    timerRef.current = setInterval(() => {
+    timerRef.current = window.setInterval(() => {
       setTimeLeft(prev => {
         if (prev <= 1) {
           handleTimeUp()
@@ -93,7 +93,7 @@ function SpeedQuizGame({ onScore, onBack }: SpeedQuizGameProps) {
 
   const handleTimeUp = () => {
     if (timerRef.current) {
-      clearInterval(timerRef.current)
+      window.clearInterval(timerRef.current)
     }
     setIsGameActive(false)
     setGameCompleted(true)
