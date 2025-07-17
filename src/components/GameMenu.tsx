@@ -9,12 +9,11 @@ function GameMenu({ onSelectGame }: GameMenuProps) {
     <div className="game-menu">
       <h2>🎮 Elige tu juego</h2>
       <div className="menu-cards">
-        <div className="menu-card" onClick={() => onSelectGame('multiple-choice')}>
-          <div className="card-icon">✅</div>
-          <h3>Selección Múltiple</h3>
-          <p>Elige el artículo correcto</p>
+        <div className="menu-card" onClick={() => onSelectGame('fill-blank')}>
+          <div className="card-icon">📝</div>
+          <h3>Llenar Espacios</h3>
+          <p>Completa las oraciones</p>
         </div>
-        
       </div>
       
       <div className="info-section">

@@ -4,9 +4,10 @@ import GameMenu from './components/GameMenu'
 import TextHighlightGame from './components/TextHighlightGame'
 import MultipleChoiceGame from './components/MultipleChoiceGame'
 import DragDropGame from './components/DragDropGame'
+import FillBlankGame from './components/FillBlankGame'
 import GameStats from './components/GameStats'
 
-export type GameType = 'menu' | 'highlight' | 'multiple-choice' | 'drag-drop'
+export type GameType = 'menu' | 'highlight' | 'multiple-choice' | 'drag-drop' | 'fill-blank'
 
 function App() {
   const [currentGame, setCurrentGame] = useState<GameType>('menu')
@@ -36,6 +37,8 @@ function App() {
         return <MultipleChoiceGame onScore={addScore} onBack={() => setCurrentGame('menu')} />
       case 'drag-drop':
         return <DragDropGame onScore={addScore} onBack={() => setCurrentGame('menu')} />
+      case 'fill-blank':
+        return <FillBlankGame onScore={addScore} onBack={() => setCurrentGame('menu')} />
       default:
         return <GameMenu onSelectGame={setCurrentGame} />
     }
